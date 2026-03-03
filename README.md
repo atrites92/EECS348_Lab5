@@ -11,7 +11,7 @@
 **Grading:** This lab has 70 points.
 <br  />
 
-<p align="center"><u>Programming problem #1:** Sales Report [40 points]</u></p>
+<p align="center"><ins>Programming problem #1: Sales Report [40 points]</ins></p>
 
 - The Sales Report program asks you to read 12 monthly sales and generate a sales report. The report should include the following content:
 - Monthly Sales Report: Display the month and sales in two columns.
@@ -21,7 +21,7 @@
 - A detailed description of the Sales Report lab: sales-report-lab.pdf 
 <br />
 
-<p align="center">**Programming problem #2.** Matrix Manipulation [30 points]</p>
+<p align="center"><ins>Programming problem #2. Matrix Manipulation [30 points]</ins></p>
 
 - The Matrix Manipulation program asks you to read input for two matrices and develop functions for the following matrix manipulations:
 - Add Two Matrices: This function should take two matrices as input and return their sum.
