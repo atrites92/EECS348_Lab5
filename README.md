@@ -19,7 +19,7 @@
 - Sales Summary Report: Show the minimum, maximum, and average monthly sales.
 - Six-Month Moving Average Report.
 - Sales Report (Highest to Lowest): Display the sales from highest to lowest.
-- A detailed description of the Sales Report lab: sales-report-lab.pdf 
+- A detailed description of the Sales Report lab: [sales-report-lab.pdf](https://github.com/atrites92/EECS348_Lab5/blob/main/sales-report-lab.pdf)
 <br />
 
 <p align="center"><ins>Programming problem #2. Matrix Manipulation [30 points]</ins></p>
@@ -29,7 +29,7 @@
 - Multiply Two Matrices: This function should take two matrices as input and return their product.
 - Transpose a Matrix: This function should take a matrix as input and return its transpose.
 - Print a Matrix: This function should take a matrix as input and print it in a user-friendly format.
-- A detailed description of the Matrix Manipulation lab: matrix-lab.pdf 
+- A detailed description of the Matrix Manipulation lab: [matrix-lab.pdf](https://github.com/atrites92/EECS348_Lab5/blob/main/matrix-lab.pdf)
 <br />
 
 **Additional Details:** Please note that both programs must include their corresponding Makefiles. You may create two separate folders and place each program’s source code and Makefile in its own folder. Do not submit any executable files.
