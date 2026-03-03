@@ -1,4 +1,4 @@
-// @author Aaron Trites
+//@author AaronTrites
 #include <stdio.h>
 
 int readFile(){

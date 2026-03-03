@@ -1,6 +1,6 @@
-// @author Aaron Trites
+//@author AaronTrites
 #include <stdio.h>
-#define SIZE 5;
+#include "matrix.h"
 
 
 int addMatrices(){
