@@ -4,13 +4,13 @@
 CC=g++
 CFLAGS = -c
 
-all: main
+all: prog
 
-main: matrix.o
-	$(CC) matrix.o -o main
+prog: matrix.o
+	$(CC) matrix.o -o prog
 
 matrix.o: matrix.c
 	$(CC) $(CFLAGS) matrix.c
 
 clean:
-	rm -rf *.o main
+	rm -rf *.o prog
