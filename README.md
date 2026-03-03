@@ -9,8 +9,8 @@
 **What to turn in:** A URL to your GitHub repository. Make sure the repository is public. Otherwise, the TAs won't be able to grade it.
 
 **Grading:** This lab has 70 points.
-<br  />
-
+<br />
+<br />
 
 <p align="center"><ins>Programming problem #1: Sales Report [40 points]</ins></p>
 
