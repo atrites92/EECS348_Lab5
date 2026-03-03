@@ -11,6 +11,7 @@
 **Grading:** This lab has 70 points.
 <br  />
 
+
 <p align="center"><ins>Programming problem #1: Sales Report [40 points]</ins></p>
 
 - The Sales Report program asks you to read 12 monthly sales and generate a sales report. The report should include the following content:
