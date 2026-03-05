@@ -71,12 +71,12 @@ int main(){
     //Sales Report (highest to lowest)
     printf("\nSales Report (highest to lowest):\n\n");
     printf("%-12s %s\n", "Month", "Sales");
-    //Sorting algorithm
+    //Sorting algorithm (bubble sort?)
     for (int i = 0; i < 11; i++){
         for (int j = 0; j < 11; j++){
             int temp1;
             const char *temp2;
-            if (sales[j] < sales[j+1]){ //Check is next is greater
+            if (sales[j] < sales[j+1]){ //Check if next is greater
                 //Swap sales
                 temp1 = sales[j];
                 sales[j] = sales[j+1];
@@ -88,7 +88,7 @@ int main(){
             }
         }
     }
-    //print sorted months
+    //Output sorted months
     for (int i = 0; i < 12; i++) {
         printf("%-12s $%.2f\n", months[i], sales[i]);
     }
