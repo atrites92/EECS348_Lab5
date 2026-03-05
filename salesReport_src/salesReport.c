@@ -31,9 +31,9 @@ int main(){
     printf("Monthly Sales Report for 2024\n\n");
 
     //Monthly Sales Report
-    printf("%-12s %-12s\n", "Month", "Sales");
+    printf("%-10s %s\n", "Month", "Sales");
     for (int i = 0; i < 12; i++){
-        printf("%-12s %-12.2f\n", months[i], sales[i]);
+        printf("%-10s %.2f\n", months[i], sales[i]);
     }
 
     //Sales Summary Report
@@ -62,15 +62,23 @@ int main(){
     for (int i = 0; i < 7; i++){
         float temp = 0.0f;
         for (int j = 0; j < 6; j++){
-            temp = temp + sales[j];
+            temp = temp + sales[i+j];
         }
-        printf("%-12s-%-12s %-12.2f\n", months[i], months[i+6], temp);
+        temp = temp / 6;
+//TODO Fix the column spacing between months and temp
+        printf("%s-%s %.2f\n", months[i], months[i+5], temp);
     }
 
 
     //Sales Report (highest to lowest)
     printf("\nSales Report (highest to lowest):\n\n");
-
+    printf("%-12s %s\n", "Month", "Sales");
+    printf("%-12s $%.2f\n", maxMonth, maxSales);
+//TODO Sort the months by sales
+    for (int i = 1; i < 11; i++){
+        printf("%-12s $%.2f\n", months[i], sales[i]);
+    }
+    printf("%-12s $%.2f\n", minMonth, minSales);
 
     return 0;  
 }
