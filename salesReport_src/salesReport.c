@@ -18,15 +18,6 @@ int main(){
 
     //Read file
 
-    //Calculate AvgSales
-    for (int i = 0; i < 12; i++){
-        avgSales = avgSales + sales[i]; 
-    }
-    avgSales = avgSales / 12.0f;
-
-    //Sort Highest to Lowest??
-
-
     /* GENERATE REPORT */
     printf("Monthly Sales Report for 2024\n\n");
 
@@ -55,6 +46,11 @@ int main(){
     }
     printf("Minimum sales:\t%.2f (%s)\n", minSales, minMonth);
     printf("Maximum sales:\t%.2f (%s)\n", maxSales, maxMonth);
+    //Calculate AvgSales
+    for (int i = 0; i < 12; i++){
+        avgSales = avgSales + sales[i]; 
+    }
+    avgSales = avgSales / 12.0f;
     printf("Average sales:\t%.2f\n\n", avgSales);
 
     //Six-Month Moving Average Report
@@ -64,9 +60,12 @@ int main(){
         for (int j = 0; j < 6; j++){
             temp = temp + sales[i+j];
         }
-        temp = temp / 6;
-//TODO Fix the column spacing between months and temp
-        printf("%s-%s %.2f\n", months[i], months[i+5], temp);
+
+        //Build month-month string
+        char strBuffer[16];
+        snprintf(strBuffer, 16, "%s-%s", months[i], months[i+5]);
+        //Output Month-Month movingAvgerage
+        printf("%-16s %.2f\n", strBuffer, (temp/6.0f));
     }
 
     //Sales Report (highest to lowest)
