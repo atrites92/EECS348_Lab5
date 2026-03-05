@@ -18,8 +18,26 @@ int main(){
 
     //Read file
 
+    //Calculate AvgSales
+    for (int i = 0; i < 12; i++){
+        avgSales = avgSales + sales[i]; 
+    }
+    avgSales = avgSales / 12.0f;
 
-    /* PERFORM CALCULATIONS */
+    //Sort Highest to Lowest??
+
+
+    /* GENERATE REPORT */
+    printf("Monthly Sales Report for 2024\n\n");
+
+    //Monthly Sales Report
+    printf("%-12s %-12s\n", "Month", "Sales");
+    for (int i = 0; i < 12; i++){
+        printf("%-12s %-12.2f\n", months[i], sales[i]);
+    }
+
+    //Sales Summary Report
+    printf("\nSales Summary Report:\n\n");
     //Calculate minSales and maxSales
     minSales = sales[0]; //default to first month
     minMonth = months[0]; //default to first month
@@ -35,39 +53,23 @@ int main(){
             maxMonth = months[i];
         }
     }
-
-    //Calculate AvgSales
-    for (int i = 0; i < 12; i++){
-        avgSales = avgSales + sales[i]; 
-    }
-    avgSales = avgSales / 12.0f;
-
-    //Calculate Moving Avg
-
-    //Sort Highest to Lowest
-
-
-    /* GENERATE REPORT */
-    printf("Monthly Sales Report for 2024\n\n");
-
-    //Monthly Sales Report
-    printf("%-12s %-12s\n", "Month", "Sales");
-    for (int i = 0; i < 12; i++){
-        printf("%-12s %-12.2f\n", months[i], sales[i]);
-    }
-
-    //Sales Summary Report
-    printf("\nSales Summary Report:\n\n");
     printf("Minimum sales:\t%.2f (%s)\n", minSales, minMonth);
     printf("Maximum sales:\t%.2f (%s)\n", maxSales, maxMonth);
     printf("Average sales:\t%.2f\n\n", avgSales);
 
     //Six-Month Moving Average Report
     printf("Six-Month Moving Average Report:\n\n");
+    for (int i = 0; i < 7; i++){
+        float temp = 0.0f;
+        for (int j = 0; j < 6; j++){
+            temp = temp + sales[j];
+        }
+        printf("%-12s-%-12s %-12.2f\n", months[i], months[i+6], temp);
+    }
 
 
     //Sales Report (highest to lowest)
-    printf("Sales Report (highest to lowest):\n\n");
+    printf("\nSales Report (highest to lowest):\n\n");
 
 
     return 0;  
