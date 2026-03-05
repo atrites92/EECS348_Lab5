@@ -69,16 +69,30 @@ int main(){
         printf("%s-%s %.2f\n", months[i], months[i+5], temp);
     }
 
-
     //Sales Report (highest to lowest)
     printf("\nSales Report (highest to lowest):\n\n");
     printf("%-12s %s\n", "Month", "Sales");
-    printf("%-12s $%.2f\n", maxMonth, maxSales);
-//TODO Sort the months by sales
-    for (int i = 1; i < 11; i++){
+    //Sorting algorithm
+    for (int i = 0; i < 11; i++){
+        for (int j = 0; j < 11; j++){
+            int temp1;
+            const char *temp2;
+            if (sales[j] < sales[j+1]){ //Check is next is greater
+                //Swap sales
+                temp1 = sales[j];
+                sales[j] = sales[j+1];
+                sales[j+1] = temp1;
+                //Swap months
+                temp2 = months[j];
+                months[j] = months[j+1];
+                months[j+1] = temp2;
+            }
+        }
+    }
+    //print sorted months
+    for (int i = 0; i < 12; i++) {
         printf("%-12s $%.2f\n", months[i], sales[i]);
     }
-    printf("%-12s $%.2f\n", minMonth, minSales);
 
     return 0;  
 }
