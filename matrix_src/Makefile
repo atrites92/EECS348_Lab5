@@ -1,7 +1,7 @@
 #@author AaronTrites
 #Makefile for matrix.c
 
-CC=g++
+CC=gcc
 CFLAGS = -c
 
 all: prog

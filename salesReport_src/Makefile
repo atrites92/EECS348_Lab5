@@ -1,7 +1,7 @@
 #@author AaronTrites
 #Makefile for salesReport.c
 
-CC=g++
+CC=gcc
 CFLAGS = -c
 
 all: main
