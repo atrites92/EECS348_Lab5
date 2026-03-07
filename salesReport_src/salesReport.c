@@ -1,15 +1,33 @@
 //@author AaronTrites
 #include <stdio.h>
 
-int readFile(){
+int readFile(float sales[], const char *filename){
+    FILE *fp = fopen(filename, "r");
+    if (fp == NULL){
+        printf("Error: could not open file %s\n", filename);
+        return 0;
+    }
 
-    return 0;
+    for (int i = 0; i < 12; i++){
+        if (fscanf(fp, "%f", &sales[i]) != 1){
+            printf("Error: invalid data in file.\n");
+            fclose(fp);
+            return 0;
+        }
+    }
+
+    fclose(fp);
+    return 1;
 }
 
 int main(){
     //Variable Declaration
-    float sales[12] = {23458.01f, 40112.00f, 56011.85f, 37820.88f, 37904.67f, 60200.22f, 72400.31f, 56210.89f, 67230.84f, 68233.12f, 80950.34f, 95225.22f};
-    const char *months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    float sales[12];
+    const char *months[12] = {
+        "January", "February", "March",
+        "April", "May", "June", "July", 
+        "August", "September", "October",
+        "November", "December"};
     float minSales = 0.0f;
     const char *minMonth;
     float maxSales = 0.0f;
@@ -17,6 +35,9 @@ int main(){
     float avgSales = 0.0f;
 
     //Read file
+    if (!readFile(sales, "sales.txt")){
+        return 1;
+    }
 
     /* GENERATE REPORT */
     printf("Monthly Sales Report for 2024\n\n");
@@ -74,7 +95,7 @@ int main(){
     //Sorting algorithm (bubble sort?)
     for (int i = 0; i < 11; i++){
         for (int j = 0; j < 11; j++){
-            int temp1;
+            float temp1;
             const char *temp2;
             if (sales[j] < sales[j+1]){ //Check if next is greater
                 //Swap sales
