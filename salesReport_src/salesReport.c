@@ -23,7 +23,7 @@ int main(){
     printf("%-10s %s\n", "Month", "Sales");
     for (int i = 0; i < 12; i++){
         printf("%-10s %.2f\n", months[i], sales[i]);
-    }
+    } 
 
     //Sales Summary Report
     printf("\nSales Summary Report:\n\n");
