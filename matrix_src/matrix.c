@@ -49,7 +49,6 @@ void printMatrix(int matrix[SIZE][SIZE]){
 }
 
 int main(){
-    #define SIZE 5
     //Variable Declaration
     int m1[SIZE][SIZE] = {
         {1,2,3,4,5},
