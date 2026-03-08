@@ -1,43 +1,20 @@
 //@author AaronTrites
 #include <stdio.h>
 
-int readFile(float sales[], const char *filename){
-    FILE *fp = fopen(filename, "r");
-    if (fp == NULL){
-        printf("Error: could not open file %s\n", filename);
-        return 0;
-    }
-
-    for (int i = 0; i < 12; i++){
-        if (fscanf(fp, "%f", &sales[i]) != 1){
-            printf("Error: invalid data in file.\n");
-            fclose(fp);
-            return 0;
-        }
-    }
-
-    fclose(fp);
-    return 1;
-}
-
 int main(){
     //Variable Declaration
-    float sales[12];
-    const char *months[12] = {
-        "January", "February", "March",
-        "April", "May", "June", "July", 
-        "August", "September", "October",
-        "November", "December"};
+    float sales[12] = {23458.01, 40112.00, 56011.85, 37820.88,
+                       37904.67, 60200.22, 72400.31, 56210.89,
+                       67230.84, 68233.12, 80950.34, 95225.22};
+    const char *months[12] = {"January", "February", "March",
+                              "April", "May", "June", "July", 
+                              "August", "September", "October",
+                              "November", "December"};
     float minSales = 0.0f;
     const char *minMonth;
     float maxSales = 0.0f;
     const char *maxMonth;
     float avgSales = 0.0f;
-
-    //Read file
-    if (!readFile(sales, "sales.txt")){
-        return 1;
-    }
 
     /* GENERATE REPORT */
     printf("Monthly Sales Report for 2024\n\n");
@@ -92,7 +69,7 @@ int main(){
     //Sales Report (highest to lowest)
     printf("\nSales Report (highest to lowest):\n\n");
     printf("%-12s %s\n", "Month", "Sales");
-    //Sorting algorithm (bubble sort?)
+    //Sorting algorithm (bubble sort)
     for (int i = 0; i < 11; i++){
         for (int j = 0; j < 11; j++){
             float temp1;
